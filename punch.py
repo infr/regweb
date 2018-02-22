@@ -10,7 +10,7 @@ r.getCookie()
 r.login()
 if args.time and args.date:
     r.punch(args.direction, args.time, args.date)
-if args.time:
+elif args.time:
     r.punch(args.direction, args.time)
 else:
     r.punch(args.direction)
