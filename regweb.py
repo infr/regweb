@@ -17,6 +17,7 @@ class regweb():
         self.pdate = ""
         self.ptime = ""
         self.balance = ""
+        self.daybalance = ""
 
         self.direction = {
             'out': 0,
@@ -70,8 +71,14 @@ class regweb():
 
         r = requests.get(self.url, cookies=self.cookies)
         if r.status_code == 200:
-            print("Balance before: " + self.balance)
+            try:
+                soup = BeautifulSoup(r.text, 'html.parser')
+                self.dailybalance = soup.find_all("div", "stamps-heading")[0].find_all("p")[1].find_all("span")[0].string.strip()
+                print("This day you worked " + self.dailybalance + "h")
+            except:
+                pass
+            oldbalance = self.balance
             self.login()
-            print("Balance now: " + self.balance)
+            print("Balance: " + self.balance + "h (was " + oldbalance + "h)")
 
 

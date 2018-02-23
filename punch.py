@@ -7,12 +7,13 @@ parser.add_argument("--debug", help="Do not really punch", action="store_true", 
 args = parser.parse_args()
 
 r = regweb.regweb('username', 'password', 'http://domain', debug=args.debug)
-
 r.getCookie()
 r.login()
 if args.time and args.date:
-    r.punch(args.direction, args.time, args.date)
-elif args.time:
-    r.punch(args.direction, args.time)
+    r.punch(args.direction, time=args.time, date=args.date)
+elif args.time and not args.date:
+    r.punch(args.direction, time=args.time)
+elif args.date:
+    r.punch(args.direction, date=args.date)
 else:
     r.punch(args.direction)
