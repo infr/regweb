@@ -79,6 +79,6 @@ class regweb():
                 pass
             oldbalance = self.balance
             self.login()
-            print("Balance: " + self.balance + "h (was " + oldbalance + "h)")
+            print("Balance:  " + oldbalance + "h -> " + self.balance + "h")
 
 
