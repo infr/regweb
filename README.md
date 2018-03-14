@@ -1,7 +1,30 @@
-# Wrapper for Reg@Web
+# Command line tool for Reg@Web
 
-Reg@Web is a web based product to use Timecon 22 working hours monitoring tool. If you found this repo, you probably have something bad to say about the UI/UX design.
+Reg@Web is a web based product to use Timecon 22 working hours monitoring tool. If you found this repo, you probably have something bad to say about the UI/UX design. Runs with Python 3.
+
+## Setup
+1. Add your username, password and domain to [punch.py](punch.py)
+2. You can add to your `~/.bash_profile` this `alias punch='python3 ~/[SET THE PATH]/regweb/punch.py'`
+3. `$ . ~/.bash_profile`
 
 ## Usage
 
-For now, add your session cookie to the code and you will be able to punch out and in.
+`punch [-h] [--time TIME] [--date DATE] [--debug] direction`
+
+positional arguments:
+  direction    in or out
+
+optional arguments:
+  -h, --help   show this help message and exit
+  --time TIME  Punch specific time eg. 10:15
+  --date DATE  Punch specific date eg. 01.01.2018
+  --debug      Do not really punch
+  
+### Example usage
+
+```bash
+$ punch --time 10:15 in
+Balance:  09:43h -> 09:43h
+$ punch out
+Balance:  09:43h -> 08:50h
+```
