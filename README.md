@@ -3,9 +3,11 @@
 Reg@Web is a web based product to use Timecon 22 working hours monitoring tool. If you found this repo, you probably have something bad to say about the UI/UX design. Runs with Python 3.
 
 ## Setup
-1. Add your username, password and domain to [punch.py](punch.py)
-2. You can add to your `~/.bash_profile` this `alias punch='python3 ~/[SET THE PATH]/regweb/punch.py'`
-3. `$ . ~/.bash_profile`
+
+1. Clone the repo `git clone https://github.com/infr/regweb.git`
+2. Add your username, password and domain to [punch.py](punch.py)
+3. Add to your `~/.bash_profile` this `alias punch='python3 ~/[SET THE PATH]/regweb/punch.py'`
+4. Run `. ~/.bash_profile`
 
 ## Usage
 
