@@ -11,7 +11,8 @@ Reg@Web is a web based product to use Timecon 22 working hours monitoring tool. 
 
 ## Usage
 
-`punch [-h] [--time TIME] [--date DATE] [--debug] direction`
+```
+punch [-h] [--time TIME] [--date DATE] [--debug] direction
 
 positional arguments:
   direction    in or out
@@ -21,10 +22,11 @@ optional arguments:
   --time TIME  Punch specific time eg. 10:15
   --date DATE  Punch specific date eg. 01.01.2018
   --debug      Do not really punch
-  
+```
+
 ### Example usage
 
-```bash
+```
 $ punch --time 10:15 in
 Balance:  09:43h -> 09:43h
 $ punch out
